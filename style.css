@@ -1,0 +1,434 @@
+﻿* {
+    font-family: sans-serif;
+}
+*::selection {
+    background: transparent;
+}
+input::-webkit-inner-spin-button {
+    display: none;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: url('./img/gallery/apple.jpg') 50% no-repeat;
+    background-size: 170%;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.switch {
+    width: 7px;
+    height: 80px;
+    background: #000;
+    box-shadow: 0 0 3px #fff;
+    position: relative;
+    left: 348px;
+    top: -150px;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 1000;
+    transition: 300ms;
+}
+.switch:active {
+    left: 346px;
+}
+.phone {
+    width: 350px;
+    height: 720px;
+    background: url('./img/gallery/apple.jpg') 50%;
+    background-size: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 5px #fff;
+    transition: 400ms;
+    border-radius: 5px;
+    position: absolute;
+}
+.front-camera {
+    width: 200px;
+    height: 30px;
+    background-color: #111;
+    position: absolute;
+    top: 10px;
+    left: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 1000;
+}
+.light {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 217, 0, 0.6);
+    border-radius: 50%;
+    position: relative;
+    left: 50px;
+}
+.px {
+    width: 26px;
+    height: 26px;
+    background: url('./img/icons/px.jpg') 50%;
+    background-size: 117%;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    left: -10px;
+}
+.line {
+    width: 60px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    left: 50px;
+}
+.screen {
+    width: 310px;
+    height: 610px;
+    background: #111 50%;
+    box-shadow: inset 0 0 2px #fff;
+    background-size: 70%;
+    transition: 400ms;
+    position: relative;
+    left: -3px;
+    top: -30px;
+    padding: 15px;
+}
+.left-block, .right-block {
+    width: 175px;
+    height: 650px;
+    position: absolute;
+    background: transparent;
+    top: -10px;
+}
+.left-block {
+    left: -5px;
+}
+.right-block{
+    left: 162px;
+}
+.left-phone-part, .right-phone-part {
+    width: 22px;
+    height: 708px;
+    background-color: #333;
+    box-shadow: 0 0 3px #111;
+    transition: 300ms;
+    position: relative;
+    top: 5px;
+}
+.left-phone-part {
+    left: -11px;
+    transform: perspective(500px) rotateY(-90deg);
+}
+.right-phone-part {
+    left: 173px;
+    transform: perspective(500px) rotateY(90deg);
+}
+.locked-clock {
+    font-size: 50px;
+    margin: 20px 90px;
+    position: absolute;
+    top: 40px;
+    display: none;
+}
+input {
+    width: 250px;
+    height: 50px;
+    margin: 130px auto;
+    background: #ccc;
+    opacity: 0.7;
+    border: 1px solid #111;
+    padding: 0 30px;
+    font-size: 30px;
+    letter-spacing: 60px;
+    display: none;
+}
+.numbers {
+    width: 60px;
+    height: 60px;
+    background: #ccc;
+    opacity: 0.6;
+    border: 1px solid #222;
+    border-radius: 50%;
+    margin: 10px;
+    position: relative;
+    top: -80px;
+    left: 25px;
+    font-size: 30px;
+    transition: 300ms;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.numbers:hover {
+    background: #444;
+    color: #fff;
+    box-shadow: 0 0 10px #fff;
+}
+.numbers:nth-child(2)::after {
+    content: '1';
+}
+.numbers:nth-child(3)::after {
+    content: '2';
+}
+.numbers:nth-child(4)::after {
+    content: '3';
+}
+.numbers:nth-child(5)::after {
+    content: '4';
+}
+.numbers:nth-child(6)::after {
+    content: '5';
+}
+.numbers:nth-child(7)::after {
+    content: '6';
+}
+.numbers:nth-child(8)::after {
+    content: '7';
+}
+.numbers:nth-child(9)::after {
+    content: '8';
+}
+.numbers:nth-child(10)::after {
+    content: '9';
+}
+.numbers:nth-child(11)::after {
+    content: 'OK';
+}
+.numbers:nth-child(12)::after {
+    content: '0';
+}
+.numbers:nth-child(13)::after {
+    font-size: 25px;
+    content: 'CLR';
+}
+.top-screen-part {
+    width: 326px;
+    height: 23px;
+    background: transparent;
+    color: #fff;
+    position: absolute;
+    left: 2px;
+    top: 0px;
+    opacity: 0.8;
+    padding: 5px;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    transition: 300ms;
+    display: none;
+    justify-content: right;
+}
+.main-clock {
+    width: 196px;
+    height: 50px;
+    background: transparent;
+    color: #fff;
+    position: absolute;
+    left: 15px;
+    top: 80px;
+    display: none;
+    align-items: left;
+    justify-content: left;
+    font-size: 40px;
+    letter-spacing: -3px;
+}
+.apps {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 12px;
+    position: relative;
+    top: 200px;
+    transition: 300ms;
+    display: none;
+    transition: 300ms;
+    font-size: 15px;
+    color: #fff;
+}
+.apps::before {
+    position: absolute;
+    top: 52px;
+}
+.apps:nth-child(16n+1)::before {
+    content: 'Play Market';
+    left: 5px;
+}
+.apps:nth-child(16n+2)::before {
+    content: 'Telegram';
+    left: -5px;
+}
+.apps:nth-child(16n+3)::before {
+    content: 'FaceBook';
+    left: -5px;
+}
+.apps:nth-child(16n+4)::before {
+    content: 'folder';
+    left: 6px;
+}
+.apps:nth-child(16n+5)::before {
+    content: 'Chrome';
+    left: 0;
+}
+.apps:nth-child(16n+6)::before {
+    content: 'gallery';
+    left: 4px;
+}
+.apps:nth-child(16n+7)::before {
+    content: 'Instagram';
+    left: -7px;
+}
+.apps:nth-child(16n+8)::before {
+    content: 'Skype';
+    left: 5px;
+}
+.apps:nth-child(16n+9)::before {
+    content: 'Settings';
+    left: 5px;
+}
+.apps:nth-child(16n+10)::before {
+    content: 'Twitter';
+    left: 0;
+}
+.apps:nth-child(16n+11)::before {
+    content: 'VK';
+    left: 15px;
+}
+.apps:nth-child(16n+12)::before {
+    content: 'Gmail';
+    left: 5px;
+}
+.apps:nth-child(16n+13)::before {
+    content: 'YouTube';
+    left: -5px;
+}
+.apps:nth-child(16n+14)::before {
+    content: 'Photo';
+    left: 5px;
+}
+.apps:nth-child(16n+15)::before {
+    content: 'music';
+    left: 5px;
+}
+.apps:nth-child(16n+16)::before {
+    content: 'Android';
+}
+.apps:hover {
+    box-shadow: inset 0 0 0 #fff, 0 0 10px #fff;
+    background-size: 90px;
+}
+.bottom-screen-part {
+    width: 330px;
+    height: 50px;
+    background: transparent;
+    border-top: 1px solid #fff;
+    position: absolute;
+    top: 575px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    display: none;
+}
+.menu {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    transition: 300ms;
+    position: relative;
+    left: 0px;
+    top: 2px;
+}
+.menu:hover {
+    box-shadow: 0 0 10px #fff;
+    text-shadow: 0 0 10px #fff;
+}
+.menu::before {
+    content: '⁝⁝⁝';
+}
+img {
+    width: 50px;
+    margin-right: 30px;
+    margin-left: 30px;
+    transition: 300ms;
+    border-radius: 50%;
+    position: relative;
+    top: 4px;
+}
+img:hover {
+    box-shadow: 0 0 5px #fff;
+}
+.main-button {
+    width: 48px;
+    height: 48px;
+    border: 2px #fff solid;
+    margin: 3px auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 7px #fff;
+    position: absolute;
+    top: 643px;
+    left: 150px;
+}
+.box {
+    width: 17px;
+    height: 17px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+}
+video {
+    width: 340px;
+    height: 640px;
+    background: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+    transform: rotateY(180deg);
+}
+.stop-button, .capture-button, canvas {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 130px;
+    top: 515px;
+    z-index: 2;
+    display: none;
+    box-shadow: inset 0 0 10px #333;
+    transition: 400ms;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+.stop-button {
+    background: url('./img/icons/rec.png') 50% no-repeat;
+    background-size: 80%;
+}
+.capture-button {
+    background: url('./img/icons/shoot.png') 50% no-repeat;
+    background-size: 80%;
+    left: 230px;
+}
+canvas {
+    border-radius: 50%;
+    transform: rotateY(180deg);
+    background-color: yellowgreen;
+    top: 515px;
+    left: 30px;
+}

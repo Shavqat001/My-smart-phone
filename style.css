@@ -114,7 +114,7 @@ body {
 }
 .left-phone-part, .right-phone-part {
     width: 22px;
-    height: 708px;
+    height: 710px;
     background-color: #333;
     box-shadow: 0 0 3px #111;
     transition: 300ms;

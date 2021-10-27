@@ -23,7 +23,7 @@ canvas.onclick = () => {
         canvas.style.borderRadius = '0%';
         canvas.style.border = '0';
         canvas.style.left = 0;
-        canvas.style.top = '30px';
+        canvas.style.top = 0;
         canvas.style.zIndex = 2000;
         canvasTrueFalse = false;
     } else {

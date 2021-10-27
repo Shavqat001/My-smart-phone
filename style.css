@@ -60,7 +60,7 @@ body {
     align-items: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    z-index: 1000;
+    z-index: 10000;
 }
 .light {
     width: 12px;
@@ -428,7 +428,6 @@ video {
 canvas {
     border-radius: 50%;
     transform: rotateY(180deg);
-    background-color: yellowgreen;
     top: 515px;
     left: 30px;
 }

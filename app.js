@@ -1,5 +1,5 @@
 let phone = document.querySelector('.phone'),
-onOff = document.querySelector('.switch'),
+    onOff = document.querySelector('.switch'),
     screen = document.querySelector('.screen'),
     camera = document.querySelector('.camera'),
     mainButton = document.querySelector('.main-button'),
@@ -14,10 +14,11 @@ onOff = document.querySelector('.switch'),
     canvas = document.querySelector('canvas'),
     ctx = canvas.getContext('2d'),
     stopButton = document.querySelector('.stop-button'),
-    captureButton = document.querySelector('.capture-button');
+    captureButton = document.querySelector('.capture-button'),
+    settings = document.querySelector('.settings');
 
 canvas.onclick = () => {
-    if(!canvasTrueFalse == 0) {
+    if (!canvasTrueFalse == 0) {
         canvas.style.width = '340px';
         canvas.style.height = '480px';
         canvas.style.borderRadius = '0%';
@@ -36,7 +37,7 @@ canvas.onclick = () => {
         canvas.style.zIndex = 2;
         canvasTrueFalse = true;
     }
-    
+
 }
 captureButton.onclick = () => {
     ctx.drawImage(video, 0, 0, 310, 610);
@@ -56,7 +57,7 @@ leftAnimationPart.onmouseover = () => {
     onOff.style.width = '2px';
     onOff.style.left = '345px';
 }
-leftAnimationPart.onmouseout= () => {
+leftAnimationPart.onmouseout = () => {
     phone.style.transform = 'perspective(1000px) rotateY(0deg)';
     leftPhonePart.style.transform = 'perspective(500px) rotateY(-90deg)';
     leftPhonePart.style.left = '-11px';
@@ -86,18 +87,18 @@ let data = new Date(),
     topMenu = document.querySelector('.top-screen-part');
 
 let clockLock = document.querySelector('.locked-clock');
-    clockLock.textContent = data.getHours() + ":" + data.getMinutes();
+clockLock.textContent = data.getHours() + ":" + data.getMinutes();
 
 let bottomMenu = document.querySelector('.bottom-screen-part'),
     mainClock = document.querySelector('.main-clock'),
     dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    mainClock.textContent = data.getHours() + ":" + data.getMinutes() + '\n' + dayNames[data.getDay()];
-let nullOfClocks = [0,1,2,3,4,5,6,7,8,9];
-if(data.getMinutes() < nullOfClocks.length) {
+mainClock.textContent = data.getHours() + ":" + data.getMinutes() + '\n' + dayNames[data.getDay()];
+let nullOfClocks = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+if (data.getMinutes() < nullOfClocks.length) {
     clockLock.textContent = data.getHours() + ":" + '0' + data.getMinutes();
     mainClock.textContent = data.getHours() + ":" + '0' + data.getMinutes() + '\n' + dayNames[data.getDay()];
 }
-else if(data.getHours() < nullOfClocks.length) {
+else if (data.getHours() < nullOfClocks.length) {
     clockLock.textContent = '0' + data.getHours() + ":" + data.getMinutes();
     mainClock.textContent = '0' + data.getHours() + ":" + data.getMinutes() + '\n' + dayNames[data.getDay()];
 }
@@ -108,22 +109,26 @@ else {
 let apps = document.getElementsByClassName("apps"),
     input = document.querySelector('input'),
     nums = document.getElementsByClassName('numbers');
+for (let i = 0; i < apps.length; i++) {
+    apps[i].onclick = () => {
+        input.value = '';
+    }
+}
 
-
-for(let t = 0; t < nums.length; t++) {
-    nums[0].onclick = () => {input.value += 1;}
-    nums[1].onclick = () => {input.value += 2;}
-    nums[2].onclick = () => {input.value += 3;}
-    nums[3].onclick = () => {input.value += 4;}
-    nums[4].onclick = () => {input.value += 5;}
-    nums[5].onclick = () => {input.value += 6;}
-    nums[6].onclick = () => {input.value += 7;}
-    nums[7].onclick = () => {input.value += 8;}
-    nums[8].onclick = () => {input.value += 9;}
-    nums[10].onclick = () => {input.value += 0;}
-    nums[11].onclick = () => {input.value = '';}
+for (let t = 0; t < nums.length; t++) {
+    nums[0].onclick = () => { input.value += 1; }
+    nums[1].onclick = () => { input.value += 2; }
+    nums[2].onclick = () => { input.value += 3; }
+    nums[3].onclick = () => { input.value += 4; }
+    nums[4].onclick = () => { input.value += 5; }
+    nums[5].onclick = () => { input.value += 6; }
+    nums[6].onclick = () => { input.value += 7; }
+    nums[7].onclick = () => { input.value += 8; }
+    nums[8].onclick = () => { input.value += 9; }
+    nums[10].onclick = () => { input.value += 0; }
+    nums[11].onclick = () => { input.value = ''; }
     nums[9].onclick = () => {
-        if(input.value == 2807) {
+        if (input.value == 2807) {
             input.style.display = n;
             clockLock.style.display = n;
             nums[0].style.display = n;
@@ -138,20 +143,41 @@ for(let t = 0; t < nums.length; t++) {
             nums[9].style.display = n;
             nums[10].style.display = n;
             nums[11].style.display = n;
-            if(!bool == 0) {
+            if (!bool == 0) {
                 screen.style.background = '#111';
                 bool = true;
-            } else {    
+            } else {
                 screen.style.background = "url('./img/gallery/soldier.jpg') 50%";
                 screen.style.backgroundSize = '125%';
                 topMenu.style.opacity = 0.6;
                 topMenu.style.display = f;
                 bottomMenu.style.display = f;
                 mainClock.style.display = f;
-                for(let i = 0; i < apps.length; i++) {
+                for (let i = 0; i < apps.length; i++) {
                     apps[i].style.display = infl;
                     apps[i].style.width = '50px';
                     apps[i].style.height = '50px';
+                    apps[6].onclick = () => {
+                        mainClock.style.display = n;
+                        apps[0].style.display = n;
+                        apps[1].style.display = n;
+                        apps[2].style.display = n;
+                        apps[3].style.display = n;
+                        apps[4].style.display = n;
+                        apps[5].style.display = n;
+                        apps[6].style.display = n;
+                        apps[7].style.display = n;
+                        apps[8].style.display = n;
+                        apps[9].style.display = n;
+                        apps[10].style.display = n;
+                        apps[11].style.display = n;
+                        apps[12].style.display = n;
+                        apps[13].style.display = n;
+                        apps[14].style.display = n;
+                        apps[15].style.display = n;
+
+                        settings.style.display = infl;
+                    }
                     apps[11].onclick = () => {
                         video.style.display = b;
                         stopButton.style.display = b;
@@ -161,16 +187,35 @@ for(let t = 0; t < nums.length; t++) {
                         topMenu.style.height = '180px';
                         navigator.mediaDevices.getUserMedia({
                             video: true
-                          }).then(stream => {
+                        }).then(stream => {
                             window.localStream = stream;
                             video.srcObject = stream;
-                          }).catch((err) => {console.log(err);});
+                        }).catch((err) => { console.log(err); });
                     }
                 }
+
                 mainButton.onclick = () => {
                     video.style.display = n;
                     stopButton.style.display = n;
                     captureButton.style.display = n;
+                    settings.style.display = n;
+                    mainClock.style.display = infl;
+                    apps[0].style.display = infl;
+                    apps[1].style.display = infl;
+                    apps[2].style.display = infl;
+                    apps[3].style.display = infl;
+                    apps[4].style.display = infl;
+                    apps[5].style.display = infl;
+                    apps[6].style.display = infl;
+                    apps[7].style.display = infl;
+                    apps[8].style.display = infl;
+                    apps[9].style.display = infl;
+                    apps[10].style.display = infl;
+                    apps[11].style.display = infl;
+                    apps[12].style.display = infl;
+                    apps[13].style.display = infl;
+                    apps[14].style.display = infl;
+                    apps[15].style.display = infl;
                     localStream.getVideoTracks()[0].stop();
                     video.src = '';
                     canvas.style.display = n;
@@ -179,16 +224,16 @@ for(let t = 0; t < nums.length; t++) {
                     topMenu.style.height = '23px';
                 }
                 stopButton.onclick = () => {
-                    if(!bool == 0) {
+                    if (!bool == 0) {
                         video.style.display = b;
                         stopButton.style.display = b;
                         captureButton.style.display = b;
                         navigator.mediaDevices.getUserMedia({
                             video: true
-                          }).then(stream => {
+                        }).then(stream => {
                             window.localStream = stream;
                             video.srcObject = stream;
-                          }).catch((err) => {console.log(err);});
+                        }).catch((err) => { console.log(err); });
                         bool = false;
                     } else {
                         localStream.getVideoTracks()[0].stop();
@@ -210,26 +255,26 @@ for(let t = 0; t < nums.length; t++) {
 }
 
 onOff.onclick = () => {
-    if(!bool == 0) {
+    if (!bool == 0) {
         leftAnimationPart.style.display = n;
         rightAnimationPart.style.display = n;
-            screen.style.background = "url('./img/gallery/dog.jpg') 50%";
-            screen.style.backgroundSize = '110%';
-            input.style.display = f;
-            clockLock.style.display = f;
-            nums[0].style.display = infl;
-            nums[1].style.display = infl;
-            nums[2].style.display = infl;
-            nums[3].style.display = infl;
-            nums[4].style.display = infl;
-            nums[5].style.display = infl;
-            nums[6].style.display = infl;
-            nums[7].style.display = infl;
-            nums[8].style.display = infl;
-            nums[9].style.display = infl;
-            nums[10].style.display = infl;
-            nums[11].style.display = infl;
-            bool = false;
+        screen.style.background = "url('./img/gallery/dog.jpg') 50%";
+        screen.style.backgroundSize = '110%';
+        input.style.display = f;
+        clockLock.style.display = f;
+        nums[0].style.display = infl;
+        nums[1].style.display = infl;
+        nums[2].style.display = infl;
+        nums[3].style.display = infl;
+        nums[4].style.display = infl;
+        nums[5].style.display = infl;
+        nums[6].style.display = infl;
+        nums[7].style.display = infl;
+        nums[8].style.display = infl;
+        nums[9].style.display = infl;
+        nums[10].style.display = infl;
+        nums[11].style.display = infl;
+        bool = false;
     } else {
         leftAnimationPart.style.display = f;
         rightAnimationPart.style.display = f;
@@ -260,7 +305,7 @@ onOff.onclick = () => {
         topMenu.style.zIndex = 0;
         topMenu.style.background = 'transparent';
         topMenu.style.height = '23px';
-        for(let i = 0; i < apps.length; i++) {
+        for (let i = 0; i < apps.length; i++) {
             apps[i].style.display = n;
             apps[i].style.width = '50px';
             apps[i].style.height = '50px';

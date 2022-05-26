@@ -214,15 +214,15 @@ for (let t = 0; t < nums.length; t++) {
                     }
                     firstBg.onclick = () => {
                         screen.style.background = 'url(./img/gallery/road.jpg) 50%';
-                        screen.style.backgroundSize = '190%';
+                        screen.style.backgroundSize = '130%';
                     }
                     secondBg.onclick = () => {
-                        screen.style.background = 'url(./img/gallery/soldier.jpg) 50%';
-                        screen.style.backgroundSize = '125%';
-                    }
-                    thirdBg.onclick = () => {
                         screen.style.background = 'url(./img/gallery/front.jpg) 50%';
                         screen.style.backgroundSize = '190%';
+                    }
+                    thirdBg.onclick = () => {
+                        screen.style.background = 'url(./img/gallery/soldier.jpg) 50%';
+                        screen.style.backgroundSize = '125%';
                     }
                     apps[11].onclick = () => {
                         video.style.display = b;

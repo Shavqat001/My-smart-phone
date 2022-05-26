@@ -15,7 +15,17 @@ let phone = document.querySelector('.phone'),
     ctx = canvas.getContext('2d'),
     stopButton = document.querySelector('.stop-button'),
     captureButton = document.querySelector('.capture-button'),
-    settings = document.querySelector('.settings');
+    settings = document.querySelector('.settings'),
+    listEl1 = document.querySelector('.LiEl1'),
+    listEl2 = document.querySelector('.LiEl2'),
+    listEl3 = document.querySelector('.LiEl3'),
+    listEl4 = document.querySelector('.LiEl4'),
+    listEl5 = document.querySelector('.LiEl5'),
+    listEl6 = document.querySelector('.LiEl6'),
+    firstBg = document.querySelector('.firstBg');
+secondBg = document.querySelector('.secondBg'),
+    thirdBg = document.querySelector('.thirdBg');
+
 
 canvas.onclick = () => {
     if (!canvasTrueFalse == 0) {
@@ -71,7 +81,7 @@ rightAnimationPart.onmouseover = () => {
     rightPhonePart.style.transform = 'perspective(500px) rotateY(40deg)';
     rightPhonePart.style.left = '180px';
     onOff.style.borderRadius = 0;
-    onOff.style.left = '351px';
+    onOff.style.left = '353px';
 }
 rightAnimationPart.onmouseout = () => {
     phone.style.transform = 'perspective(1000px) rotateY(0deg)';
@@ -176,7 +186,43 @@ for (let t = 0; t < nums.length; t++) {
                         apps[14].style.display = n;
                         apps[15].style.display = n;
 
-                        settings.style.display = infl;
+                        settings.style.display = f;
+                    }
+                    let liBool = true;
+                    listEl1.onclick = () => {
+                        if (!liBool == 0) {
+                            listEl2.style.display = n;
+                            listEl3.style.display = n;
+                            listEl4.style.display = n;
+                            listEl5.style.display = n;
+                            listEl6.style.display = n;
+                            firstBg.style.display = f;
+                            secondBg.style.display = f;
+                            thirdBg.style.display = f;
+                            liBool = false;
+                        } else {
+                            listEl2.style.display = b;
+                            listEl3.style.display = b;
+                            listEl4.style.display = b;
+                            listEl5.style.display = b;
+                            listEl6.style.display = b;
+                            firstBg.style.display = n;
+                            secondBg.style.display = n;
+                            thirdBg.style.display = n;
+                            liBool = true;
+                        }
+                    }
+                    firstBg.onclick = () => {
+                        screen.style.background = 'url(./img/gallery/road.jpg) 50%';
+                        screen.style.backgroundSize = '190%';
+                    }
+                    secondBg.onclick = () => {
+                        screen.style.background = 'url(./img/gallery/soldier.jpg) 50%';
+                        screen.style.backgroundSize = '125%';
+                    }
+                    thirdBg.onclick = () => {
+                        screen.style.background = 'url(./img/gallery/front.jpg) 50%';
+                        screen.style.backgroundSize = '190%';
                     }
                     apps[11].onclick = () => {
                         video.style.display = b;

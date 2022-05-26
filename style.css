@@ -394,22 +394,51 @@ input {
 }
 
 .settingList {
+    width: 100%;
     margin-left: -20px;
-    margin-top: 20px;
+    margin-top: 15px;
     cursor: pointer;
     transition: 250ms;
     padding: 10px;
+    padding-right: 30px;
     border-radius: 10px;
+    display: block;
+    text-decoration: underline;
+}
+.settingList:nth-child(2) {
+    font-size: 25px;
 }
 
 .settingList:hover {
-    background: linear-gradient(90deg, dodgerblue, transparent 70%);
+    background: dodgerblue;
+    color: #fff;
 }
 
 .settingList::before {
     content: '❯ ';
 }
-
+.firstBg, .secondBg, .thirdBg {
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    margin-left: -10px;
+    display: none;
+}
+.firstBg {
+    background: url('./img/gallery/road.jpg') 50%;
+    background-size: 100%;
+    margin-top: 130px;
+}
+.secondBg {
+    background: url(./img/gallery/soldier.jpg) 50%;
+    background-size: 100%;
+    margin-top: 271px;
+}
+.thirdBg {
+    background: url('./img/gallery/front.jpg') 50%;
+    background-size: 100%;
+    margin-top: 412px;
+}
 .bottom-screen-part {
     width: 330px;
     height: 50px;
